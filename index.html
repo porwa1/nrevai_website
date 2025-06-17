@@ -112,6 +112,61 @@
             background-color: #1f2937;
         }
 
+        /* Mobile Navigation Menu */
+        #mobile-menu-button {
+            display: block;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #111827;
+        }
+
+        @media (min-width: 768px) {
+            #mobile-menu-button {
+                display: none;
+            }
+        }
+
+        #mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-bottom: 1px solid #f3f4f6;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        #mobile-menu.active {
+            display: block;
+        }
+
+        #mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            padding: 16px 24px;
+            gap: 16px;
+        }
+
+        .mobile-nav-link {
+            color: #6b7280;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 12px 0;
+            border-bottom: 1px solid #f3f4f6;
+            transition: color 0.2s;
+        }
+
+        .mobile-nav-link:hover {
+            color: #111827;
+        }
+
+        .mobile-nav-link.active {
+            color: #111827;
+        }
+
         /* HERO SECTION STYLES */
         #hero-section {
             padding-top: 80px; /* Add space for fixed navigation */
@@ -603,30 +658,6 @@
             color: #374151;
             line-height: 1.5;
         }
-        
-        @media (max-width: 767px) {
-            .ttc-main-card {
-                padding: 2rem 1rem;
-            }
-            
-            .ttc-title {
-                font-size: 1.875rem;
-            }
-            
-            .ttc-tabs-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .ttc-tab-connector {
-                display: none;
-            }
-            
-            .ttc-tab-content {
-                grid-template-columns: 1fr;
-            }
-        }
-
 
         .feature-card {
             max-width: 1312px;
@@ -1120,61 +1151,10 @@
             color: #ffffff;
         }
 
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .nrev-footer-container {
-                grid-template-columns: 1fr 1fr 1fr;
-                gap: 60px;
-                padding: 0 30px;
-            }
-            
-            .nrev-footer-logo-section {
-                grid-column: 1 / -1;
-                margin-bottom: 20px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nrev-footer-wrapper {
-                padding: 60px 0 40px 0;
-            }
-            
-            .nrev-footer-container {
-                grid-template-columns: 1fr 1fr;
-                gap: 40px;
-                padding: 0 20px;
-            }
-            
-            .nrev-footer-bottom {
-                padding: 30px 20px 0 20px;
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .nrev-footer-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .nrev-footer-logo-section {
-                justify-content: center;
-                margin-bottom: 30px;
-            }
-            
-            .nrev-footer-column {
-                text-align: center;
-            }
-            
-            .nrev-logo-icon {
-                width: 50px;
-                height: 50px;
-            }
-            
-            .nrev-logo-letter {
-                font-size: 28px;
-            }
+        /* Infinite scroll effect */
+        @keyframes marquee {
+        from { transform: translateX(-13.25%); }
+        to { transform: translateX(-80%); } /* half because images repeated once */
         }
 
         /* Animation */
@@ -1190,86 +1170,6 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .nrev-hero-wrapper {
-                padding: 60px 30px;
-            }
-            
-            .nrev-globe-visual {
-                width: 350px;
-                height: 350px;
-            }
-            
-            .nrev-main-title {
-                font-size: 52px;
-            }
-            
-            .nrev-subtitle-text {
-                font-size: 22px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nrev-hero-wrapper {
-                padding: 40px 20px;
-            }
-            
-            .nrev-globe-visual {
-                width: 280px;
-                height: 280px;
-            }
-            
-            .nrev-world-map-area {
-                width: 220px;
-                height: 220px;
-            }
-            
-            .nrev-main-title {
-                font-size: 40px;
-                margin-bottom: 24px;
-            }
-            
-            .nrev-subtitle-text {
-                font-size: 18px;
-                margin-bottom: 36px;
-            }
-            
-            .nrev-button-group {
-                flex-direction: column;
-                gap: 16px;
-            }
-            
-            .nrev-action-button {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .nrev-globe-visual {
-                width: 240px;
-                height: 240px;
-            }
-            
-            .nrev-world-map-area {
-                width: 180px;
-                height: 180px;
-            }
-            
-            .nrev-main-title {
-                font-size: 32px;
-            }
-            
-            .nrev-subtitle-text {
-                font-size: 16px;
-            }
-            
-            .nrev-plane-icon {
-                font-size: 18px;
             }
         }
 
@@ -1318,93 +1218,6 @@
             }
         }
 
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .faq-container {
-                padding: 50px 60px;
-            }
-            
-            .faq-title {
-                font-size: 40px;
-                margin-bottom: 50px;
-            }
-            
-            .faq-question-text {
-                font-size: 28px;
-            }
-            
-            .faq-answer-text {
-                font-size: 18px;
-                padding-right: 40px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .faq-container {
-                padding: 40px 30px;
-                border-radius: 24px;
-            }
-            
-            .faq-title {
-                font-size: 32px;
-                margin-bottom: 40px;
-            }
-            
-            .faq-question {
-                padding: 24px 0;
-            }
-            
-            .faq-question-text {
-                font-size: 24px;
-                margin-right: 15px;
-            }
-            
-            .faq-icon {
-                font-size: 28px;
-                min-width: 28px;
-            }
-            
-            .faq-answer-text {
-                font-size: 16px;
-                padding-right: 20px;
-            }
-            
-            .faq-answer.expanded {
-                padding-bottom: 24px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .faq-container {
-                padding: 30px 20px;
-                border-radius: 20px;
-            }
-            
-            .faq-title {
-                font-size: 28px;
-                margin-bottom: 30px;
-            }
-            
-            .faq-question {
-                padding: 20px 0;
-            }
-            
-            .faq-question-text {
-                font-size: 20px;
-                margin-right: 10px;
-            }
-            
-            .faq-icon {
-                font-size: 24px;
-                min-width: 24px;
-            }
-            
-            .faq-answer-text {
-                font-size: 15px;
-                padding-right: 10px;
-            }
-        }
-
         /* Animation */
         .faq-container {
             animation: fadeInUp 0.6s ease-out;
@@ -1421,95 +1234,9 @@
             }
         }
 
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .testimonial-container {
-                width: 90%;
-                padding: 50px 60px;
-            }
-            
-            .quote-marks {
-                left: 60px;
-                font-size: 100px;
-            }
-            
-            .testimonial-text {
-                font-size: 40px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .testimonial-container {
-                padding: 40px 30px;
-                min-height: auto;
-            }
-            
-            .quote-marks {
-                left: 30px;
-                font-size: 80px;
-                top: 20px;
-            }
-            
-            .testimonial-text {
-                font-size: 28px;
-                margin-bottom: 40px;
-                margin-top: 20px;
-            }
-            
-            .author-section {
-                gap: 15px;
-            }
-            
-            .author-avatar {
-                width: 56px;
-                height: 56px;
-            }
-            
-            .author-name {
-                font-size: 18px;
-            }
-            
-            .author-title {
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .testimonial-container {
-                padding: 30px 20px;
-            }
-            
-            .quote-marks {
-                left: 20px;
-                font-size: 60px;
-            }
-            
-            .testimonial-text {
-                font-size: 24px;
-                line-height: 1.3;
-            }
-            
-            .author-section {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
-            }
-        }
-
         /* Animation */
         .testimonial-container {
             animation: fadeInUp 0.8s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .quote-marks {
@@ -1533,91 +1260,538 @@
             }
         }
 
-        @media (max-width: 768px) {
-            .inner-content {
-                padding: 1.5rem;
+        /* MOBILE RESPONSIVE STYLES - ENHANCED */
+        
+        /* Mobile Navigation */
+        @media (max-width: 767px) {
+            #nav-container {
+                padding: 12px 16px;
             }
             
-            .main-heading {
-                font-size: 1.5rem;
+            #nav-cta-button {
+                font-size: 14px;
+                padding: 8px 16px;
             }
             
-            .description-text {
-                font-size: 1rem;
+            #logo-container img {
+                height: 20px;
+            }
+        }
+
+        /* Mobile Hero Section */
+        @media (max-width: 767px) {
+            #hero-section {
+                height: auto;
+                min-height: 100vh;
+                padding: 80px 0 40px;
+                background-size: 80%;
+                background-position: center bottom;
             }
             
-            .visual-container {
-                height: 300px;
+            #hero-grid {
+                flex-direction: column;
+                height: auto;
             }
-        }
-
-
-        /* Infinite scroll effect */
-        @keyframes marquee {
-        from { transform: translateX(-13.25%); }
-        to { transform: translateX(-80%); } /* half because images repeated once */
-        }
-
-        /* Mobile responsiveness: static vertical stack */
-        @media screen and (max-width: 768px) {
-
-
-        .logo-track img {
-            height: 20px;
-            margin: 10px 10px;
-        }
-
-        /* Hide repeated logos on mobile */
-        .logo-track img.repeat-logo {
-            display: none;
-        }
-
-        /* Remove gradient on mobile */
-        .gradient {
-            display: none;
-        }
-        }
-
-        /* RESPONSIVE ADJUSTMENTS */
-        @media (max-width: 1024px) {
+            
             #hero-left-content {
-                padding-left: 35px;
-                width: 60%;
+                width: 100%;
+                padding: 20px 16px 40px;
+                text-align: center;
+                order: 1;
             }
             
             #hero-headline {
-                font-size: 40px;
+                font-size: 28px;
+                line-height: 1.2;
+                margin-bottom: 16px;
+            }
+            
+            #hero-subheading {
+                font-size: 16px;
+                line-height: 1.4;
+                margin-bottom: 24px;
+                max-width: 100%;
+            }
+            
+            #hero-buttons-container {
+                flex-direction: column;
+                gap: 12px;
+                width: 100%;
+            }
+            
+            #hero-primary-button,
+            #hero-secondary-button {
+                width: 100%;
+                font-size: 16px;
+                padding: 12px 24px;
+            }
+            
+            #hero-right-content {
+                position: relative;
+                width: 100%;
+                height: 200px;
+                order: 2;
+                margin-top: 20px;
             }
         }
 
-        @media (max-width: 768px) {
-            #hero-section {
-                height: auto;
-                padding-bottom: 50px;
+        /* Mobile Logo Marquee */
+        @media (max-width: 767px) {
+            .logo-marquee {
+                margin-top: 2rem;
+                height: 60px;
             }
             
+            .logo-track img {
+                height: 30px;
+                margin: 0 20px;
+            }
+            
+            .mind1 {
+                height: 30px;
+                margin: 0 20px;
+            }
+            
+            .gradient {
+                display: none;
+            }
+        }
+
+        /* Mobile Card Section */
+        @media (max-width: 767px) {
+            .card {
+                width: calc(100vw - 32px);
+                height: auto;
+                padding: 24px 20px;
+                border-radius: 24px;
+                margin: 0 16px;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .main-title {
+                font-size: 24px;
+                line-height: 1.3;
+            }
+            
+            .subtitle {
+                font-size: 16px;
+                line-height: 1.4;
+            }
+            
+            .bullet-points {
+                gap: 16px;
+            }
+            
+            .bullet-text {
+                font-size: 16px;
+            }
+            
+            .card img {
+                height: 200px;
+                width: 100%;
+                object-fit: cover;
+                margin-right: 0;
+            }
+        }
+
+        /* Mobile Templates Section */
+        @media (max-width: 767px) {
+            .ttc-main-card {
+                width: calc(100vw - 32px);
+                height: auto;
+                padding: 24px 16px;
+                border-radius: 24px;
+                margin: 0 16px;
+            }
+            
+            .ttc-title {
+                font-size: 24px;
+                line-height: 1.3;
+                margin-bottom: 16px;
+            }
+            
+            .ttc-subtitle {
+                font-size: 16px;
+                margin-bottom: 32px;
+                line-height: 1.4;
+            }
+            
+            .ttc-tabs-container {
+                flex-direction: column;
+                gap: 12px;
+                margin-bottom: 24px;
+            }
+            
+            .ttc-tab-group {
+                flex-direction: column;
+                width: 100%;
+                gap: 8px;
+            }
+            
+            .ttc-tab-button {
+                width: 100%;
+                padding: 12px 16px;
+                font-size: 14px;
+            }
+            
+            .ttc-tab-connector {
+                display: none;
+            }
+            
+            .ttc-tab-content {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .ttc-card-image {
+                height: 120px;
+            }
+            
+            .ttc-card-content {
+                padding: 16px;
+            }
+            
+            .ttc-card-title {
+                font-size: 16px;
+            }
+            
+            .ttc-card-description {
+                font-size: 14px;
+            }
+        }
+
+        /* Mobile Feature Card */
+        @media (max-width: 767px) {
+            .feature-card {
+                width: calc(100vw - 32px);
+                border-radius: 24px;
+                margin: 0 16px;
+            }
+            
+            .inner-content {
+                padding: 32px 20px;
+            }
+            
+            .main-heading {
+                font-size: 24px;
+            }
+            
+            .description-text {
+                font-size: 16px;
+                margin-bottom: 32px;
+            }
+            
+            .visual-container {
+                border-radius: 16px;
+            }
+            
+            .visual-container img {
+                height: 200px;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        /* Mobile Testimonial */
+        @media (max-width: 767px) {
+            .testimonial-container {
+                width: calc(100vw - 32px);
+                padding: 32px 20px;
+                border-radius: 24px;
+                margin: 3rem 16px 0;
+                min-height: auto;
+            }
+            
+            .quote-marks {
+                font-size: 60px;
+                top: 20px;
+                left: 20px;
+            }
+            
+            .testimonial-content {
+                margin-top: 20px;
+            }
+            
+            .testimonial-text {
+                font-size: 20px;
+                line-height: 1.3;
+                margin-bottom: 24px;
+            }
+            
+            .author-section {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            
+            .author-avatar {
+                width: 48px;
+                height: 48px;
+            }
+            
+            .author-name {
+                font-size: 16px;
+            }
+            
+            .author-title {
+                font-size: 14px;
+            }
+        }
+
+        /* Mobile FAQ */
+        @media (max-width: 767px) {
+            .faq-container {
+                width: calc(100vw - 32px);
+                padding: 32px 20px;
+                border-radius: 24px;
+                margin: 3rem 16px 0;
+            }
+            
+            .faq-title {
+                font-size: 24px;
+                margin-bottom: 32px;
+            }
+            
+            .faq-question {
+                padding: 20px 0;
+            }
+            
+            .faq-question-text {
+                font-size: 18px;
+                margin-right: 12px;
+            }
+            
+            .faq-icon {
+                font-size: 24px;
+                min-width: 24px;
+            }
+            
+            .faq-answer-text {
+                font-size: 14px;
+                padding-right: 0;
+            }
+            
+            .faq-answer.expanded {
+                padding-bottom: 20px;
+            }
+        }
+
+        /* Mobile Final CTA */
+        @media (max-width: 767px) {
+            .nrev-hero-wrapper {
+                padding: 40px 16px;
+                min-height: 80vh;
+            }
+            
+            .nrev-globe-visual {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .nrev-globe-wrapper {
+                margin-bottom: 32px;
+            }
+            
+            .nrev-main-title {
+                font-size: 28px;
+                line-height: 1.2;
+                margin-bottom: 20px;
+            }
+            
+            .nrev-subtitle-text {
+                font-size: 16px;
+                line-height: 1.4;
+                margin-bottom: 32px;
+            }
+            
+            .nrev-button-group {
+                flex-direction: column;
+                gap: 12px;
+                width: 100%;
+            }
+            
+            .nrev-action-button {
+                width: 100%;
+                max-width: 300px;
+                font-size: 16px;
+                padding: 14px 24px;
+                min-width: auto;
+            }
+        }
+
+        /* Mobile Footer */
+        @media (max-width: 767px) {
+            .nrev-footer-wrapper {
+                padding: 40px 0 30px 0;
+            }
+            
+            .nrev-footer-container {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 0 16px;
+            }
+            
+            .nrev-footer-logo-section {
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+            
+            .nrev-footer-column {
+                text-align: center;
+            }
+            
+            .nrev-footer-column-title {
+                font-size: 16px;
+                margin-bottom: 16px;
+            }
+            
+            .nrev-footer-link {
+                font-size: 14px;
+            }
+            
+            .nrev-footer-bottom {
+                padding: 24px 16px 0;
+                flex-direction: column;
+                text-align: center;
+                gap: 16px;
+            }
+            
+            .nrev-footer-copyright {
+                font-size: 12px;
+            }
+            
+            .nrev-footer-social-links {
+                gap: 16px;
+            }
+            
+            .nrev-social-link {
+                font-size: 12px;
+            }
+            
+            .nrev-logo-icon {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .nrev-logo-letter {
+                font-size: 24px;
+            }
+        }
+
+        /* Tablet Responsive (768px - 1023px) */
+        @media (min-width: 768px) and (max-width: 1023px) {
             #hero-left-content {
-                width: 50%;
-                padding: 100px 20px 50px;
+                padding-left: 40px;
+                width: 55%;
+                padding-top: 8rem;
             }
             
             #hero-headline {
                 font-size: 36px;
             }
-
+            
             #hero-subheading {
                 font-size: 18px;
             }
-
-            #hero-buttons-container {
-                flex-direction: column;
-                align-items: stretch;
+            
+            .card {
+                width: calc(100vw - 64px);
+                padding: 40px;
+                margin: 0 32px;
             }
+            
+            .ttc-main-card {
+                width: calc(100vw - 64px);
+                padding: 40px 32px;
+                margin: 0 32px;
+            }
+            
+            .feature-card {
+                width: calc(100vw - 64px);
+                margin: 0 32px;
+            }
+            
+            .testimonial-container {
+                width: calc(100vw - 64px);
+                margin: 3rem 32px 0;
+                padding: 40px 50px;
+            }
+            
+            .faq-container {
+                width: calc(100vw - 64px);
+                margin: 3rem 32px 0;
+                padding: 40px 50px;
+            }
+            
+            .nrev-hero-wrapper {
+                padding: 60px 32px;
+            }
+            
+            .nrev-footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                padding: 0 32px;
+            }
+            
+            .nrev-footer-logo-section {
+                grid-column: 1 / -1;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+        }
 
-            #hero-right-content {
-                position: relative;
-                width: 100%;
-                height: 300px;
+        /* Large Mobile (480px - 767px) */
+        @media (min-width: 480px) and (max-width: 767px) {
+            #hero-headline {
+                font-size: 32px;
+            }
+            
+            .main-title {
+                font-size: 28px;
+            }
+            
+            .ttc-title {
+                font-size: 28px;
+            }
+            
+            .testimonial-text {
+                font-size: 24px;
+            }
+            
+            .faq-title {
+                font-size: 28px;
+            }
+            
+            .nrev-main-title {
+                font-size: 32px;
+            }
+        }
+
+        /* Small Mobile (max-width: 479px) */
+        @media (max-width: 479px) {
+            .card,
+            .ttc-main-card,
+            .feature-card,
+            .testimonial-container,
+            .faq-container {
+                margin: 0 8px;
+                width: calc(100vw - 16px);
+            }
+            
+            .nrev-hero-wrapper {
+                padding: 32px 8px;
+            }
+            
+            .nrev-footer-container {
+                padding: 0 8px;
+            }
+            
+            .nrev-footer-bottom {
+                padding: 20px 8px 0;
             }
         }
     </style>
@@ -1628,7 +1802,8 @@
         <div id="nav-container">
             <div id="nav-content">
                 <!-- Logo -->
-                <div id="logo-container"><img src="logo.svg" height="25px" width="automate">
+                <div id="logo-container">
+                    <img src="logo.svg" height="25px" width="auto" alt="nRev Logo">
                 </div>
 
                 <!-- Navigation Links -->
@@ -1640,8 +1815,22 @@
                     <a href="#" class="nav-link">FAQs</a>
                 </div>
 
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" aria-label="Toggle mobile menu">☰</button>
+
                 <!-- CTA Button -->
                 <button id="nav-cta-button">Get Early Access</button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu">
+                <div id="mobile-menu-links">
+                    <a href="#" class="mobile-nav-link">Home</a>
+                    <a href="#" class="mobile-nav-link">Integrations</a>
+                    <a href="#" class="mobile-nav-link">Template</a>
+                    <a href="#" class="mobile-nav-link active">Product</a>
+                    <a href="#" class="mobile-nav-link">FAQs</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -1754,7 +1943,7 @@
             </div>
 
             <!-- Right side - Image placeholder -->
-                <img src="card1.png" height="450px" style="margin-right: -30px">
+                <img src="card1.png" height="450px" style="margin-right: -30px" alt="RevOps transformation">
         </div>
     </div>
     <div class="ttc-container">
@@ -1953,7 +2142,7 @@
     
                 <!-- Image placeholder -->
                 <div class="visual-container">
-                    <img src="card2.png" height="560px" width="automate">
+                    <img src="card2.png" height="560px" width="auto" alt="Integrations diagram">
                 </div>
             </div>
         </div>
@@ -2033,7 +2222,7 @@
                 <div class="nrev-globe-wrapper">
                     <div class="nrev-globe-visual">
                         <div class="nrev-globe-sphere">
-                            <img src="">
+                            <img src="/placeholder.svg" alt="Globe visualization">
                         </div>
                         <div class="nrev-globe-base-stand"></div>
                     </div>
@@ -2057,7 +2246,7 @@
                 <div class="nrev-footer-logo-section">
                     <a href="#" class="nrev-footer-logo">
                         <div class="nrev-logo-icon">
-                            <img src="footer-logo.svg">
+                            <img src="footer-logo.svg" alt="nRev Footer Logo">
                         </div>
                     </a>
                 </div>
@@ -2104,12 +2293,18 @@
             </div>
         </footer>
 
-
     <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('active');
+        });
+
         // Add smooth scrolling for navigation links
-        document.querySelectorAll('.nav-link').forEach(link => {
+        document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
             link.addEventListener('click', function(e) {
-                // Add any smooth scrolling behavior here if needed
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.remove('active');
                 console.log('Navigation link clicked:', this.textContent);
             });
         });
@@ -2117,18 +2312,16 @@
         // Add click handlers for buttons
         document.getElementById('nav-cta-button').addEventListener('click', function() {
             console.log('Navigation CTA clicked');
-            // Add your CTA functionality here
         });
 
         document.getElementById('hero-primary-button').addEventListener('click', function() {
             console.log('Hero primary button clicked');
-            // Add your primary CTA functionality here
         });
 
         document.getElementById('hero-secondary-button').addEventListener('click', function() {
             console.log('Hero secondary button clicked');
-            // Add your secondary CTA functionality here
         });
+
         document.addEventListener('DOMContentLoaded', function() {
             const ttcTabButtons = document.querySelectorAll('.ttc-tab-button');
             const ttcTabContents = document.querySelectorAll('.ttc-tab-content');
@@ -2163,8 +2356,8 @@
             });
         });
 
-                // Add smooth scroll behavior and intersection observer for animations
-                document.addEventListener('DOMContentLoaded', function() {
+        // Add smooth scroll behavior and intersection observer for animations
+        document.addEventListener('DOMContentLoaded', function() {
             // Intersection Observer for scroll-triggered animations
             const observerOptions = {
                 threshold: 0.1,
@@ -2291,34 +2484,37 @@
                 });
             });
         });
+
         document.addEventListener('DOMContentLoaded', function() {
             // Add click handlers for buttons
             const primaryBtn = document.querySelector('.nrev-button-dark');
             const secondaryBtn = document.querySelector('.nrev-button-light');
             
-            primaryBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                // Add your early access logic here
-                console.log('Get Early Access clicked');
-                
-                // Visual feedback
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 150);
-            });
+            if (primaryBtn) {
+                primaryBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Get Early Access clicked');
+                    
+                    // Visual feedback
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            }
             
-            secondaryBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                // Add your demo logic here
-                console.log('See Nrev in action clicked');
-                
-                // Visual feedback
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 150);
-            });
+            if (secondaryBtn) {
+                secondaryBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('See Nrev in action clicked');
+                    
+                    // Visual feedback
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            }
             
             // Add parallax effect on scroll
             window.addEventListener('scroll', function() {
@@ -2344,13 +2540,13 @@
                 });
             });
         });
+
         document.addEventListener('DOMContentLoaded', function() {
             // Add smooth scroll for internal links
             const footerLinks = document.querySelectorAll('.nrev-footer-link');
             
             footerLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
-                    // Add your navigation logic here
                     console.log('Footer link clicked:', this.textContent);
                     
                     // Visual feedback
@@ -2363,17 +2559,21 @@
             
             // Add logo click handler
             const logo = document.querySelector('.nrev-footer-logo');
-            logo.addEventListener('click', function(e) {
-                e.preventDefault();
-                console.log('Logo clicked - navigate to home');
-                
-                // Visual feedback
-                const logoIcon = this.querySelector('.nrev-logo-icon');
-                logoIcon.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    logoIcon.style.transform = '';
-                }, 150);
-            });
+            if (logo) {
+                logo.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Logo clicked - navigate to home');
+                    
+                    // Visual feedback
+                    const logoIcon = this.querySelector('.nrev-logo-icon');
+                    if (logoIcon) {
+                        logoIcon.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            logoIcon.style.transform = '';
+                        }, 150);
+                    }
+                });
+            }
             
             // Add intersection observer for animation
             const observer = new IntersectionObserver(function(entries) {
@@ -2391,7 +2591,6 @@
                 observer.observe(footer);
             }
         });
-
     </script>
 </body>
 </html>
