@@ -734,7 +734,6 @@
             background: white;
             border-radius: 64px;
             padding: 60px 80px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -1149,6 +1148,289 @@
 
         .nrev-social-link:hover {
             color: #ffffff;
+        }
+
+        .nrev-modal-demo-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .nrev-modal-demo-page * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nrev-demo-trigger-button {
+            background: #2d3748;
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nrev-demo-trigger-button:hover {
+            background: #1a202c;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(45, 55, 72, 0.3);
+        }
+
+        .nrev-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            padding: 20px;
+        }
+
+        .nrev-modal-overlay.nrev-modal-active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nrev-modal-container {
+            width: 1048px;
+            height: 462px;
+            max-width: 100%;
+            max-height: 90vh;
+            background: white;
+            border-radius: 6.85px;
+            display: flex;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            transform: scale(0.9) translateY(20px);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nrev-modal-overlay.nrev-modal-active .nrev-modal-container {
+            transform: scale(1) translateY(0);
+        }
+
+        .nrev-modal-image-section {
+            position: relative;
+            height: 50%;
+            width: auto;
+        }
+
+        .nrev-modal-content-section {
+            flex: 1;
+            padding: 60px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .nrev-modal-close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #9ca3af;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+
+        .nrev-modal-close-button:hover {
+            background: #f3f4f6;
+            color: #374151;
+        }
+
+        .nrev-modal-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .nrev-modal-subtitle {
+            font-size: 18px;
+            color: #6b7280;
+            line-height: 1.5;
+            margin-bottom: 40px;
+        }
+
+        .nrev-modal-form {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .nrev-form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .nrev-form-label {
+            font-size: 16px;
+            color: #374151;
+            font-weight: 500;
+        }
+
+        .nrev-form-input {
+            padding: 16px 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .nrev-form-input:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .nrev-form-input::placeholder {
+            color: #9ca3af;
+        }
+
+        .nrev-form-submit-button {
+            background: #2d3748;
+            color: white;
+            border: none;
+            padding: 16px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+            min-width: 180px;
+        }
+
+        .nrev-form-submit-button:hover {
+            background: #1a202c;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(45, 55, 72, 0.3);
+        }
+
+        .nrev-form-submit-button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .nrev-success-message {
+            display: none;
+            text-align: center;
+            color: #059669;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 20px;
+            background: #ecfdf5;
+            border-radius: 12px;
+            border: 1px solid #a7f3d0;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1100px) {
+            .nrev-modal-container {
+                width: 95%;
+                height: auto;
+                min-height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nrev-modal-container {
+                flex-direction: column;
+                width: 95%;
+                height: auto;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+            
+            .nrev-modal-image-section {
+                height: 50%;
+                width: auto;
+            }
+            
+            .nrev-modal-content-section {
+                padding: 40px 30px;
+                flex: none;
+            }
+            
+            .nrev-modal-title {
+                font-size: 28px;
+            }
+            
+            .nrev-modal-subtitle {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nrev-modal-overlay {
+                padding: 10px;
+            }
+            
+            .nrev-modal-container {
+                border-radius: 16px;
+            }
+            
+            .nrev-modal-content-section {
+                padding: 30px 20px;
+            }
+            
+            .nrev-modal-title {
+                font-size: 24px;
+            }
+            
+            .nrev-form-submit-button {
+                width: 100%;
+            }
+        }
+
+        /* Animation */
+        @keyframes nrevModalSlideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .nrev-modal-container.nrev-modal-entering {
+            animation: nrevModalSlideIn 0.3s ease-out;
         }
 
         /* Infinite scroll effect */
@@ -1815,11 +2097,12 @@
                     <a href="#" class="nav-link">FAQs</a>
                 </div>
 
+                <button id="nav-cta-button" onclick="openNrevModal()">Get Early Access</button>
+
                 <!-- Mobile Menu Button -->
                 <button id="mobile-menu-button" aria-label="Toggle mobile menu">☰</button>
 
-                <!-- CTA Button -->
-                <button id="nav-cta-button">Get Early Access</button>
+             
             </div>
             
             <!-- Mobile Menu -->
@@ -1850,7 +2133,7 @@
                     </div>
 
                     <div id="hero-buttons-container">
-                        <button id="hero-primary-button">Get Early Access</button>
+                        <button id="hero-primary-button" onclick="openNrevModal()">Get Early Access</button>
                         <button id="hero-secondary-button">See Nrev in action</button>
                     </div>
                 </div>
@@ -2152,7 +2435,7 @@
             
             <div class="testimonial-content">
                 <div class="testimonial-text">
-                    With nrev.ai our Ops team automated lead-to-account matching, daily pipeline hygiene, and expansion scouting in a week. It paid for itself before launch.
+                    "With nrev.ai our Ops team automated lead-to-account matching, daily pipeline hygiene, and expansion scouting in a week. It paid for itself before launch."
                 </div>
             </div>
             
@@ -2235,8 +2518,49 @@
                 </p>
                 
                 <div class="nrev-button-group">
-                    <a href="#" class="nrev-action-button nrev-button-dark">Get Early Access</a>
+                    <a href="#" class="nrev-action-button nrev-button-dark" onclick="openNrevModal()">Get Early Access</a>
                     <a href="#" class="nrev-action-button nrev-button-light">See Nrev in action</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="nrev-modal-overlay" id="nrevModalOverlay" onclick="closeNrevModal(event)">
+            <div class="nrev-modal-container" onclick="event.stopPropagation()">
+                <div class="nrev-modal-image-section"><img src="elements.png" width="400px" height="480px"></div>
+                
+                <div class="nrev-modal-content-section">
+                    <button class="nrev-modal-close-button" onclick="closeNrevModal()">
+                        ×
+                    </button>
+                    
+                    <h2 class="nrev-modal-title">Reserve Your Seat at Launch</h2>
+                    <p class="nrev-modal-subtitle">
+                        Join our private beta and be among the first to automate RevOps workflows.
+                    </p>
+                    
+                    <form class="nrev-modal-form" id="nrevEarlyAccessForm" onsubmit="handleNrevFormSubmit(event)">
+                        <div class="nrev-form-group">
+                            <label class="nrev-form-label" for="nrevWorkEmail">
+                                Please enter your work email
+                            </label>
+                            <input 
+                                type="email" 
+                                id="nrevWorkEmail" 
+                                name="email" 
+                                class="nrev-form-input"
+                                placeholder="your.email@company.com"
+                                required
+                            >
+                        </div>
+                        
+                        <button type="submit" class="nrev-form-submit-button" id="nrevSubmitButton">
+                            Get Early Access
+                        </button>
+                    </form>
+                    
+                    <div class="nrev-success-message" id="nrevSuccessMessage">
+                        🎉 Thank you! You've been added to our early access list.
+                    </div>
                 </div>
             </div>
         </div>
@@ -2591,6 +2915,98 @@
                 observer.observe(footer);
             }
         });
+
+                // Modal functionality
+                function openNrevModal() {
+            const overlay = document.getElementById('nrevModalOverlay');
+            const container = overlay.querySelector('.nrev-modal-container');
+            
+            overlay.classList.add('nrev-modal-active');
+            container.classList.add('nrev-modal-entering');
+            document.body.style.overflow = 'hidden';
+            
+            // Focus on email input
+            setTimeout(() => {
+                document.getElementById('nrevWorkEmail').focus();
+            }, 300);
+        }
+
+        function closeNrevModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            
+            const overlay = document.getElementById('nrevModalOverlay');
+            const container = overlay.querySelector('.nrev-modal-container');
+            
+            overlay.classList.remove('nrev-modal-active');
+            container.classList.remove('nrev-modal-entering');
+            document.body.style.overflow = '';
+            
+            // Reset form after modal closes
+            setTimeout(() => {
+                resetNrevForm();
+            }, 300);
+        }
+
+        function handleNrevFormSubmit(event) {
+            event.preventDefault();
+            
+            const submitButton = document.getElementById('nrevSubmitButton');
+            const successMessage = document.getElementById('nrevSuccessMessage');
+            const form = document.getElementById('nrevEarlyAccessForm');
+            const email = document.getElementById('nrevWorkEmail').value;
+            
+            // Disable button and show loading state
+            submitButton.disabled = true;
+            submitButton.textContent = 'Submitting...';
+            
+            // Simulate API call
+            setTimeout(() => {
+                // Hide form and show success message
+                form.style.display = 'none';
+                successMessage.style.display = 'block';
+                
+                console.log('Early access signup:', email);
+                
+                // Close modal after 2 seconds
+                setTimeout(() => {
+                    closeNrevModal();
+                }, 2000);
+                
+            }, 1000);
+        }
+
+        function resetNrevForm() {
+            const form = document.getElementById('nrevEarlyAccessForm');
+            const successMessage = document.getElementById('nrevSuccessMessage');
+            const submitButton = document.getElementById('nrevSubmitButton');
+            
+            form.style.display = 'flex';
+            successMessage.style.display = 'none';
+            submitButton.disabled = false;
+            submitButton.textContent = 'Get Early Access';
+            form.reset();
+        }
+
+        // Keyboard event handlers
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeNrevModal();
+            }
+        });
+
+        // Prevent body scroll when modal is open
+        document.addEventListener('DOMContentLoaded', function() {
+            const overlay = document.getElementById('nrevModalOverlay');
+            
+            // Add transition end listener to clean up classes
+            overlay.addEventListener('transitionend', function() {
+                if (!overlay.classList.contains('nrev-modal-active')) {
+                    overlay.querySelector('.nrev-modal-container').classList.remove('nrev-modal-entering');
+                }
+            });
+        });
+
+
     </script>
 </body>
 </html>
