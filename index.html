@@ -176,7 +176,7 @@
             max-height: 800px;
             background-image: url('heroimage.png');
             background-size: 60%;
-            background-position: right;
+            background-position: top right;
             background-repeat: no-repeat;
         }
 
@@ -354,7 +354,7 @@
         .card {
             text-align: left;
             width: 1312px;
-            height: 583px;
+            height: auto;
             flex-shrink: 0;
             border-radius: 64px;
             border: 0px solid #DDD6FE;
@@ -864,6 +864,7 @@
         }
 
         .faq-question-text {
+            text-align: left;
             font-size: 32px;
             font-weight: 500;
             color: #1a1a1a;
@@ -894,6 +895,7 @@
         }
 
         .faq-answer-text {
+            text-align: left;
             font-size: 20px;
             line-height: 1.6;
             color: #4a4a4a;
@@ -912,7 +914,9 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 80px 40px;
+            padding-right: 40px;
+            padding-left: 40px;
+            padding-bottom: 70px;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             box-sizing: border-box;
             position: relative;
@@ -925,35 +929,11 @@
             padding: 0;
         }
 
-        .nrev-hero-main-content {
-            max-width: 1200px;
-            width: 100%;
-            text-align: center;
-            z-index: 2;
-        }
-
-        .nrev-globe-wrapper {
-            margin-bottom: 60px;
-            position: relative;
-            display: inline-block;
-        }
-
         .nrev-globe-visual {
-            width: 400px;
-            height: 400px;
-            position: relative;
             margin: 0 auto;
+            align-items: center;
         }
 
-        .nrev-globe-sphere {
-            width: 100%;
-            height: 100%;
-            background: white;
-            border-radius: 50%;
-            position: relative;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
 
         .nrev-main-title {
             font-size: 64px;
@@ -980,6 +960,7 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
+            margin-bottom: 2rem;
         }
 
         .nrev-action-button {
@@ -1543,7 +1524,6 @@
         }
 
         /* MOBILE RESPONSIVE STYLES - ENHANCED */
-        
         /* Mobile Navigation */
         @media (max-width: 767px) {
             #nav-container {
@@ -1563,11 +1543,8 @@
         /* Mobile Hero Section */
         @media (max-width: 767px) {
             #hero-section {
-                height: auto;
-                min-height: 100vh;
-                padding: 80px 0 40px;
-                background-size: 80%;
-                background-position: center bottom;
+                min-height: 30vh;
+                background-size: 90%;
             }
             
             #hero-grid {
@@ -1577,9 +1554,10 @@
             
             #hero-left-content {
                 width: 100%;
-                padding: 20px 16px 40px;
+                padding: 80px 16px 0px;
                 text-align: center;
                 order: 1;
+                margin-top: 5rem;
             }
             
             #hero-headline {
@@ -1620,7 +1598,8 @@
         /* Mobile Logo Marquee */
         @media (max-width: 767px) {
             .logo-marquee {
-                margin-top: 2rem;
+                margin-top: -3rem;
+                margin-bottom: 2rem;
                 height: 60px;
             }
             
@@ -1674,9 +1653,8 @@
             
             .card img {
                 height: 200px;
-                width: 100%;
-                object-fit: cover;
-                margin-right: 0;
+                width: 60%;
+                margin-left: 3rem;
             }
         }
 
@@ -1843,6 +1821,7 @@
             }
             
             .faq-question-text {
+                text-align: left;
                 font-size: 18px;
                 margin-right: 12px;
             }
@@ -1869,19 +1848,12 @@
                 min-height: 80vh;
             }
             
-            .nrev-globe-visual {
-                width: 200px;
-                height: 200px;
-            }
-            
-            .nrev-globe-wrapper {
-                margin-bottom: 32px;
-            }
             
             .nrev-main-title {
                 font-size: 28px;
                 line-height: 1.2;
                 margin-bottom: 20px;
+                text-align: center;
             }
             
             .nrev-subtitle-text {
@@ -2093,7 +2065,7 @@
                     <a href="#" class="nav-link">Home</a>
                     <a href="#" class="nav-link">Integrations</a>
                     <a href="#" class="nav-link">Template</a>
-                    <a href="#" class="nav-link active">Product</a>
+                    <a href="#" class="nav-link">Product</a>
                     <a href="#" class="nav-link">FAQs</a>
                 </div>
 
@@ -2111,7 +2083,7 @@
                     <a href="#" class="mobile-nav-link">Home</a>
                     <a href="#" class="mobile-nav-link">Integrations</a>
                     <a href="#" class="mobile-nav-link">Template</a>
-                    <a href="#" class="mobile-nav-link active">Product</a>
+                    <a href="#" class="mobile-nav-link">Product</a>
                     <a href="#" class="mobile-nav-link">FAQs</a>
                 </div>
             </div>
@@ -2140,7 +2112,7 @@
 
                 <!-- Right Content - Purple Geometric Design -->
                 <div id="hero-right-content">
-                    <div id="geometric-container">                        <!-- Play button overlay -->
+                    <div id="geometric-container">
                     </div>
                 </div>
             </div>
@@ -2226,7 +2198,7 @@
             </div>
 
             <!-- Right side - Image placeholder -->
-                <img src="card1.png" height="450px" style="margin-right: -30px" alt="RevOps transformation">
+                <img src="card1.png" height="300px" class="card1" style="margin-right: -30px" alt="RevOps transformation">
         </div>
     </div>
     <div class="ttc-container">
@@ -2440,7 +2412,7 @@
             </div>
             
             <div class="author-section">
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-06-16%20at%203.02.15%E2%80%AFPM-01usaQb9nD44VK70q2h8byv1Fe2Pwz.png" alt="Ishan Bhardwaj" class="author-avatar">
+                <img src="ishan.jpg" alt="Ishan Bhardwaj" class="author-avatar">
                 <div class="author-info">
                     <div class="author-name">Ishan Bhardwaj, Director</div>
                     <div class="author-title">VP Revenue Operations, HyperScale.io (B2B SaaS)</div>
@@ -2501,15 +2473,9 @@
         </div>
 </center>
         <div class="nrev-hero-wrapper">
-            <div class="nrev-hero-main-content">
-                <div class="nrev-globe-wrapper">
                     <div class="nrev-globe-visual">
-                        <div class="nrev-globe-sphere">
-                            <img src="/placeholder.svg" alt="Globe visualization">
-                        </div>
-                        <div class="nrev-globe-base-stand"></div>
+                            <center><img src="destination.png" width="62%" height="62%" alt="Globe visualization"></center>
                     </div>
-                </div>
                 
                 <h1 class="nrev-main-title">"Command Revenue, Not Spreadsheets."</h1>
                 
@@ -2711,7 +2677,7 @@
 
             testimonialContainer.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
-                this.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+                this.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0)';
             });
 
             // Add click to copy functionality
