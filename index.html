@@ -13,7 +13,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Mulish", "Open Sans";
             background-color: white;
             color: #111827;
             line-height: 1.6;
@@ -176,7 +176,8 @@
             max-height: 800px;
             background-image: url('heroimage.png');
             background-size: 60%;
-            background-position: top right;
+            background-position-x: right;
+            background-position-y: 40px;
             background-repeat: no-repeat;
         }
 
@@ -205,6 +206,7 @@
         #hero-headline {
             font-size: 47px;
             font-weight: bold;
+            font-family: 'Mulish', sans-serif;
             color: rgba(0, 0, 0, 1);
             line-height: 1.1;
             margin-bottom: 20px;
@@ -306,13 +308,16 @@
         }
         /*Yes*/
         .logo-marquee {
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        margin-top: 7rem;
-        background-color: rgb(255, 255, 255);
-        height: 100px; /* Adjust height based on logo sizes */
-        align-items: center;
+            background: white;
+            mask-image: linear-gradient(to right, transparent, white 30%, white 80%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, white 30%, white 80%, transparent);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            margin-top: 7rem;
+            background-color: rgb(255, 255, 255);
+            height: 100px; /* Adjust height based on logo sizes */
+            align-items: center;
         }
 
         .logo-track {
@@ -665,7 +670,6 @@
             background-color: #F2FBF8;;
             border-radius: 64px;
             overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -1554,7 +1558,7 @@
             
             #hero-left-content {
                 width: 100%;
-                padding: 80px 16px 0px;
+                padding: 100px 16px 0px;
                 text-align: center;
                 order: 1;
                 margin-top: 5rem;
