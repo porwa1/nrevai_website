@@ -335,7 +335,7 @@
             const submitButton = document.getElementById('nrevSubmitButton');
             const successMessage = document.getElementById('nrevSuccessMessage');
             const form = document.getElementById('nrevEarlyAccessForm');
-            const email = document.getElementById('nrevWorkEmail').value;
+            const email = document.getElementById('nrevWorkEmail');
             
             // Disable button and show loading state
             submitButton.disabled = true;
@@ -348,7 +348,7 @@
 
             // Prepare payload
             const payload = {
-                email: email,
+                email: email.value,
                 form_type: 'waitlist'
             };
             console.log("before making request")
@@ -367,14 +367,17 @@
                 return response.json();
             })
             .then(data => {
-                console.log('Waitlist submission successful:', data);
-                alert('Thank you for joining the waitlist!');
-                emailInput.value = ''; // Clear input if needed
+                // console.log('Waitlist submission successful:', data);
+                successMessage.style.display = 'block';
+                email.value = ''; // Clear input if needed
             })
             .catch(error => {
                 console.error('Error submitting to waitlist:', error);
                 alert('There was a problem submitting the form. Please try again.');
-            });
+            }).finally(()=>{
+            submitButton.disabled = false;
+            submitButton.textContent = 'Get Early Access';
+            })
             
         }
 
