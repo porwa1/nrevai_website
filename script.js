@@ -75,42 +75,7 @@
                     }
                 });
             }, observerOptions);
-
-            // Observe the testimonial container
-            const testimonialContainer = document.querySelector('.testimonial-container');
-            if (testimonialContainer) {
-                observer.observe(testimonialContainer);
-            }
-
-            // Add hover effects
-            testimonialContainer.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px)';
-                this.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.12)';
-                this.style.transition = 'all 0.3s ease';
-            });
-
-            testimonialContainer.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-                this.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0)';
-            });
-
-            // Add click to copy functionality
-            testimonialContainer.addEventListener('click', function() {
-                const testimonialText = document.querySelector('.testimonial-text').textContent;
-                const authorName = document.querySelector('.author-name').textContent;
-                const fullText = `"${testimonialText}" - ${authorName}`;
-                
-                navigator.clipboard.writeText(fullText).then(function() {
-                    // Show a brief feedback
-                    const originalBorder = testimonialContainer.style.border;
-                    testimonialContainer.style.border = '2px solid #8b5cf6';
-                    setTimeout(() => {
-                        testimonialContainer.style.border = originalBorder;
-                    }, 300);
-                }).catch(function(err) {
-                    console.log('Could not copy text: ', err);
-                });
-            });
+    
         });
 
         function toggleFAQ(element) {
