@@ -663,6 +663,7 @@
         }
         
         .ttc-card-title {
+            font-family: 'Mulish', sans-serif;
             font-size: 1.25rem;
             font-weight: bold;
             line-height: 1;
