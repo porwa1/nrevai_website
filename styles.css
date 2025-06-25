@@ -9,7 +9,6 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Mulish", "Open Sans";
             background-color: white;
             color: #111827;
             line-height: 1.6;
@@ -27,9 +26,9 @@
         }
 
         #nav-container {
-            max-width: 1280px;
+            width: 100vw;
             margin: 0 auto;
-            padding: 16px 24px; /* EDIT: Navigation padding */
+            padding: 16px 13%; /* EDIT: Navigation padding */
         }
 
         #nav-content {
