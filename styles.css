@@ -55,9 +55,6 @@
             }
         }
 
-        
-        
-
         #nav-content {
             display: flex;
             align-items: center;
@@ -341,14 +338,14 @@
         .logo-marquee {
             background: white;
             mask-image: linear-gradient(to right, transparent, white 30%, white 80%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, white 30%, white 80%, transparent);
+            -webkit-mask-image: linear-gradient(to left, transparent, white 30%, white 80%, transparent);
             position: relative;
             overflow: hidden;
             width: 100%;
-            margin-top: 7rem;
+            margin-top: 4.5rem;
             background-color: rgb(255, 255, 255);
-            height: 100px; /* Adjust height based on logo sizes */
             align-items: center;
+            margin-bottom: 5.5rem;
         }
 
         .logo-track {
@@ -386,31 +383,63 @@
         background: linear-gradient(to left, black 30%, transparent 100%);
         }
 
-        
+        /* Optimize for mac 13.6inch*/
+        @media (min-width: 1440px){
         .card {
             text-align: left;
-            width: 1312px;
-            height: auto;
+            width: 1360px;
+            height: 583px;
             flex-shrink: 0;
             border-radius: 64px;
             border: 0px solid #DDD6FE;
             background: #F8F7FD;
             padding: 75px;
+            margin: 0 auto; /* Center it */
+        }}
+        
+        /* Optimize for 27inch ext display*/
+        @media (min-width: 1920px) {
+            .card {
+                width: 1570px;
+                height: 583px;
+            }
         }
+        
+        /* Optional: For even larger ultra-wides */
+        @media (min-width: 2560px) {
+            .card {
+                width: 1360px;
+            }
+        }
+        
 
         .grid {
-            display: grid;
-            grid-template-columns: 2fr .5fr;
-            gap: 55px;
+            display: flex;
             align-items: center;
             height: 100%;
+        }
+
+        .grid img{
+            width: 40%;
+            height: auto;
         }
 
         .text-content {
             display: flex;
             flex-direction: column;
-            gap: 45px;
+            width: 70%;
+            gap: 48px;
         }
+
+        @media (min-width: 412px) {
+            .text-content {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                gap: 48px;
+            }
+        }
+
 
         .text-header {
             display: flex;
@@ -421,6 +450,7 @@
         .main-title {
             font-family: 'Mulish', sans-serif;
             font-size: 36px;
+            margin-bottom: 16px;
             font-weight: 800;
             color: #1C1C1C;
             line-height: 100%;
@@ -477,7 +507,9 @@
 
         @media (max-width: 1024px) {
             .grid {
+                display: grid;
                 grid-template-columns: 1fr;
+                align-items: center;
                 gap: 32px;
             }
             
@@ -492,11 +524,12 @@
         
         .ttc-container {
             margin: 0 auto;
-            padding: 2rem 0;
+            padding: 5.5rem 0;
         }
-        
+
+        /* Optimize for 27inch ext display*/
         .ttc-main-card {
-            width: 1312px;
+            width: 1360px;
             height: 950px;
             border-radius: 64px;
             background-color: #fdf8f5;
@@ -506,12 +539,39 @@
             padding-bottom: 60rem;
             box-sizing: border-box;
         }
-        
+                
+        /* Optimize for mac 13.6inch*/
+        @media (min-width: 1920px) {
+            .ttc-main-card {
+                width: 1570px;
+                height: 950px;
+                border-radius: 64px;
+                background-color: #fdf8f5;
+                padding-left: 3rem;
+                padding-right: 3rem;
+                padding-top: 5rem;
+                padding-bottom: 60rem;
+                box-sizing: border-box;
+            }}
+
+        @media (min-width: 2560px) {
+            .card {
+                    width: 1360px;
+            }
+        }
+
         .ttc-content-wrapper {
-            max-width: 1152px;
+            max-width: 1210px;
             margin: 0 auto;
             text-align: center;
         }
+
+        @media (min-width: 1920px) {
+        .ttc-content-wrapper {
+            max-width: 1420px;
+            margin: 0 auto;
+            text-align: center;
+        }}
         
         .ttc-title {
             font-family: 'Mulish', sans-serif;
@@ -705,7 +765,7 @@
         }
 
         .feature-card {
-            max-width: 1312px;
+            max-width: 1360px;
             width: 100%;
             background-color: #F2FBF8;;
             border-radius: 64px;
@@ -713,6 +773,26 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        @media (min-width: 1920px){
+            .feature-card {
+                max-width: 1570px;
+                width: 100%;
+                background-color: #F2FBF8;;
+                border-radius: 64px;
+                overflow: hidden;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+        }
+
+
+        @media (min-width: 2560px) {
+            .card {
+                    width: 1360px;
+            }
         }
 
         .inner-content {
@@ -753,6 +833,7 @@
         }
 
         .visual-container {
+            width: 96%;
             border-radius: 70px;
             background-color: #e4fce4;
             display: flex;
@@ -761,6 +842,16 @@
             overflow: hidden;
             margin: 0;
             padding: 0;
+        }
+
+        .visual-container video{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 70px;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         .diagram-image {
@@ -774,7 +865,7 @@
 
         .testimonial-container {
             position: relative;
-            width: 1312px;
+            width: 1360px;
             max-width: 100%;
             height: auto;
             min-height: 537px;
@@ -784,16 +875,27 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            margin-top: 3rem;
+            margin: 5.5rem 0;
             box-sizing: border-box;
         }
 
-        .testimonial-container * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        @media (min-width: 1920px){
+            .testimonial-container {
+                position: relative;
+                width: 1580px;
+                max-width: 100%;
+                height: auto;
+                min-height: 537px;
+                background: white;
+                border-radius: 64px;
+                padding: 60px 80px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+                margin-top: 3rem;
+                box-sizing: border-box;
+            }}
 
         .quote-marks {
             position: absolute;
@@ -866,25 +968,32 @@
 
 
         .faq-container {
-            max-width: 1312px;
-            margin-top: 3rem;
+            max-width: 1360px;
+            margin: 5.5rem 0;
             background: white;
-            border: 2px solid #b396fb;
+            border: 1px solid #b396fb;
             border-radius: 64px;
-            padding: 60px 80px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            padding: 60px 75px;
             box-sizing: border-box;
         }
 
-        .faq-container * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        @media (min-width: 1920px) {
+            .faq-container {
+                max-width: 1570px;
+                margin-top: 3rem;
+                background: white;
+                border: 1px solid #b396fb;
+                border-radius: 64px;
+                padding: 60px 75px;
+                box-sizing: border-box;
+            }
         }
+
 
         .faq-title {
+            font-family: "Mulish", sans-serif;
             font-size: 36px;
-            font-weight: 800;
+            font-weight: 700;
             color: #1a1a1a;
             text-align: center;
             margin-bottom: 60px;
@@ -922,7 +1031,6 @@
             color: #000000;
             line-height: 1.3;
             flex: 1;
-            margin-right: 20px;
         }
 
         .faq-icon {
@@ -1072,8 +1180,6 @@
 
         .nrev-footer-wrapper * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
         }
 
         .nrev-footer-container {
@@ -1098,22 +1204,18 @@
         .nrev-footer-logo {
             display: flex;
             align-items: center;
-            text-decoration: none;
         }
 
         .nrev-logo-icon {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 8px;
+            width: 45px;
+            height: 45px;
         }
 
         .nrev-logo-icon img {
             width: 100%;
             height: 100%;
             object-fit: contain;
+            margin-top: .5rem;
         }
 
         .nrev-footer-nav {
@@ -1166,19 +1268,19 @@
 
         @media (max-width: 768px) {
             .nrev-footer-main {
-                flex-direction: column;
+                justify-content: center;
                 gap: 20px;
-                align-items: flex-start;
+                align-items: center;
             }
 
             .nrev-footer-nav {
                 gap: 20px;
                 flex-wrap: wrap;
+                align-items: center;
             }
 
             .nrev-footer-bottom {
-                flex-direction: column;
-                align-items: flex-start;
+                flex-direction: row;
                 gap: 15px;
             }
         }
@@ -1591,6 +1693,7 @@
             #nav-cta-button {
                 font-size: 14px;
                 padding: 8px 16px;
+                margin-left: 6rem;
             }
             
             #logo-container img {
@@ -1680,6 +1783,7 @@
         @media (max-width: 767px) {
             .card {
                 width: calc(100vw - 32px);
+                background: #F8F7FD;
                 height: auto;
                 padding: 24px 20px;
                 border-radius: 24px;
@@ -1702,6 +1806,7 @@
             }
             
             .bullet-points {
+                text-align: left;
                 gap: 16px;
             }
             
@@ -1789,13 +1894,19 @@
                 border-radius: 24px;
                 margin: 0 16px;
             }
+
+            .visual-container{
+                width: 100%;
+                height: auto;
+                border-radius: 24px;
+            }
             
             .inner-content {
                 padding: 22px 10px;
             }
             
             .main-heading {
-                font-size: 24px;
+                font-size: 28px;
             }
             
             .description-text {
@@ -1816,7 +1927,6 @@
                 width: calc(100vw - 32px);
                 padding: 32px 20px;
                 border-radius: 24px;
-                margin: 3rem 16px 0;
                 min-height: auto;
             }
             
@@ -1831,7 +1941,7 @@
             }
             
             .testimonial-text {
-                font-size: 20px;
+                font-size: 25px;
                 line-height: 1.3;
                 margin-bottom: 24px;
             }
@@ -1868,7 +1978,7 @@
             .faq-title {
                 font-family: 'Mulish', sans-serif;
                 font-weight: 800;
-                font-size: 36px;
+                font-size: 28px;
                 margin-bottom: 32px;
             }
             
@@ -1878,9 +1988,9 @@
             
             .faq-question-text {
                 font-family: 'Open Sans', sans-serif;
+                font-weight: 600;
                 text-align: left;
                 font-size: 18px;
-                margin-right: 12px;
             }
             
             .faq-icon {
@@ -2059,26 +2169,36 @@
         @media (min-width: 480px) and (max-width: 767px) {
             #hero-headline {
                 font-size: 32px;
+                font-family: 'Mulish', sans-serif;
             }
             
             .main-title {
                 font-size: 28px;
+                font-family: 'Mulish', sans-serif;
             }
             
             .ttc-title {
                 font-size: 28px;
+                font-family: 'Mulish', sans-serif;
+            }
+
+            .main-heading{
+                font-size: 28px;
+                font-family: 'Mulish', sans-serif;
             }
             
             .testimonial-text {
-                font-size: 24px;
+                font-size: 28px;
             }
             
             .faq-title {
                 font-size: 28px;
+                font-family: 'Mulish', sans-serif;
             }
             
             .nrev-main-title {
                 font-size: 32px;
+                font-family: 'Mulish', sans-serif;
             }
         }
 
@@ -2087,10 +2207,13 @@
             .card,
             .ttc-main-card,
             .feature-card,
-            .testimonial-container,
             .faq-container {
                 margin: 0 8px;
                 width: calc(100vw - 16px);
+            }
+
+            .testimonial-container{
+                width: 100%;
             }
             
             .nrev-hero-wrapper {
