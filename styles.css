@@ -1183,10 +1183,17 @@
         }
 
         .nrev-footer-container {
-            max-width: 1500px;
+            width: 1210px;
             margin: 0 auto;
-            padding: 0 40px;
         }
+
+        @media (min-width: 1920px) {
+            .nrev-footer-container {
+                width: 1420px;
+                margin: 0 auto;
+            }
+        }
+
 
         .nrev-footer-main {
             display: flex;
