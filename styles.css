@@ -720,6 +720,7 @@
         
         
         .ttc-card-inner {
+            height: 100%;
             background-color: white;
             border-radius: 12px;
             border: 1px solid var(--Light-Other-Outlined-Border, rgba(76, 78, 100, 0.22));
